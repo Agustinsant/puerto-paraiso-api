@@ -11,7 +11,7 @@ const schema = new Schema ({
         required: true
     },
     location: {
-        type: URL,
+        type: String,
         required: true
     },
     description: {
