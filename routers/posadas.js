@@ -37,7 +37,12 @@ router.patch('/posada/:id', (req, res) => {
 router.delete('/posada/:id', (req, res) => {
     const _id = req.params.id
     Posada.findByIdAndDelete(_id, {new: true, runValidators: true})
-    .then(posada => res.send(posada))
+    .then(posada => {
+        if(!posada){
+            return res.status(404).send()
+        }
+        res.send(posada)
+    })
     .catch(err => res.status(404).send(err))
 })
 
