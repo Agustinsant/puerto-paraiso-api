@@ -21,6 +21,9 @@ const schema = new Schema ({
     shortdescription: {
         type: String,
         required: true
+    },
+    prominent: {
+        type: String
     }
 })
 
